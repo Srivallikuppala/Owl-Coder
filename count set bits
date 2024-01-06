@@ -1,0 +1,9 @@
+import math
+def countSetBits(n):
+    if n==0:return 0
+    elif n==1:return 1
+    p_p = int(math.log2(n));
+    ans = p_p*(1<<(p_p-1))+n-(1<<p_p)+1+countSetBits(n-(1<<p_p))
+    return ans
+n = int(input())
+print(countSetBits(n))
