@@ -1,0 +1,10 @@
+import math
+def sets(x):
+    if x==1 or x==0:return x
+    p_p = int(math.log2(x))
+    ans = p_p*(1<<(p_p-1))+x-(1<<p_p)+1+sets(x-(1<<p_p))
+    return ans
+n = int(input())
+for i in range(n):
+    x = int(input())
+    print(sets(x))
